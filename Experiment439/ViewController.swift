@@ -7,10 +7,15 @@
 //
 
 import Cocoa
+import SceneKit
 
 class ViewController: NSViewController {
+    @IBOutlet private var textview: NSTextView!
+    @IBOutlet private var scenekitview: SCNView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        textview.textStorage?.append(NSAttributedString(string: "viewDidLoad()"))
 
         // Do any additional setup after loading the view.
     }
