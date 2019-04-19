@@ -70,7 +70,6 @@ public struct LinearScale {
     func ticks(count: Int = 10) -> [Double] {
         var result: [Double] = Array()
         for i in stride(from: 0, through: count, by: 1) {
-            print(i) // prints 0 to 10
             result.append(interpolate(Double(i) / Double(count), range: domain))
         }
         return result
