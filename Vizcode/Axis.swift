@@ -22,7 +22,7 @@ import SceneKit
  • or axis.ticks(d3.timeMinute.every(15)) to create a tick every 15 min
  • ticks have a size - both inner and outer
  often has a margin (spacing) and translation from the side it's attached
-*/
+ */
 
 public enum AxisDirection {
     case x
@@ -67,5 +67,5 @@ public struct Axis {
  So maybe we start with computed properties of Axis to generate SCNNode classes on request/demand, but
  don't keep any references to existing SCNNodes for updating - separating concerns for generating and
  updating, at least to start...
- 
+
  */
