@@ -1,6 +1,8 @@
 included:
   - Experiment439
   - Experiment439Tests
+  - Vizcode
+  - VizcodeTests
 analyzer_rules:
   - unused_import
   - unused_private_declaration

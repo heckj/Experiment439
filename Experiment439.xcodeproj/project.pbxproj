@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A2B3CD8226A39350074A818 /* VizcodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3CD7226A39350074A818 /* VizcodeTests.swift */; };
+		1A2B3CE0226A39C30074A818 /* Scale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3CDF226A39C30074A818 /* Scale.swift */; };
+		1A2B3CE1226A39C30074A818 /* Scale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3CDF226A39C30074A818 /* Scale.swift */; };
 		1A52259222694AB2003F4219 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A52259122694AB2003F4219 /* AppDelegate.swift */; };
 		1A52259422694AB2003F4219 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A52259322694AB2003F4219 /* ViewController.swift */; };
 		1A52259622694AB4003F4219 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A52259522694AB4003F4219 /* Assets.xcassets */; };
@@ -15,6 +18,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		1A2B3CDA226A39350074A818 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A52258622694AB2003F4219 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A52258D22694AB2003F4219;
+			remoteInfo = Experiment439;
+		};
 		1A5225A122694AB4003F4219 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1A52258622694AB2003F4219 /* Project object */;
@@ -25,6 +35,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A2B3CD5226A39350074A818 /* VizcodeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VizcodeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A2B3CD7226A39350074A818 /* VizcodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VizcodeTests.swift; sourceTree = "<group>"; };
+		1A2B3CD9226A39350074A818 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A2B3CDF226A39C30074A818 /* Scale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scale.swift; sourceTree = "<group>"; };
 		1A52258E22694AB2003F4219 /* Experiment439.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Experiment439.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A52259122694AB2003F4219 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A52259322694AB2003F4219 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -39,6 +53,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1A2B3CD2226A39350074A818 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1A52258B22694AB2003F4219 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -56,12 +77,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A2B3CD0226A38E40074A818 /* Vizcode */ = {
+			isa = PBXGroup;
+			children = (
+				1A2B3CDF226A39C30074A818 /* Scale.swift */,
+			);
+			path = Vizcode;
+			sourceTree = "<group>";
+		};
+		1A2B3CD6226A39350074A818 /* VizcodeTests */ = {
+			isa = PBXGroup;
+			children = (
+				1A2B3CD7226A39350074A818 /* VizcodeTests.swift */,
+				1A2B3CD9226A39350074A818 /* Info.plist */,
+			);
+			path = VizcodeTests;
+			sourceTree = "<group>";
+		};
 		1A52258522694AB2003F4219 = {
 			isa = PBXGroup;
 			children = (
+				1A2B3CD0226A38E40074A818 /* Vizcode */,
 				1A5225AF22694B23003F4219 /* README.md */,
 				1A52259022694AB2003F4219 /* Experiment439 */,
 				1A5225A322694AB4003F4219 /* Experiment439Tests */,
+				1A2B3CD6226A39350074A818 /* VizcodeTests */,
 				1A52258F22694AB2003F4219 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -71,6 +111,7 @@
 			children = (
 				1A52258E22694AB2003F4219 /* Experiment439.app */,
 				1A5225A022694AB4003F4219 /* Experiment439Tests.xctest */,
+				1A2B3CD5226A39350074A818 /* VizcodeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -100,6 +141,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1A2B3CD4226A39350074A818 /* VizcodeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A2B3CDC226A39350074A818 /* Build configuration list for PBXNativeTarget "VizcodeTests" */;
+			buildPhases = (
+				1A2B3CD1226A39350074A818 /* Sources */,
+				1A2B3CD2226A39350074A818 /* Frameworks */,
+				1A2B3CD3226A39350074A818 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1A2B3CDB226A39350074A818 /* PBXTargetDependency */,
+			);
+			name = VizcodeTests;
+			productName = VizcodeTests;
+			productReference = 1A2B3CD5226A39350074A818 /* VizcodeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		1A52258D22694AB2003F4219 /* Experiment439 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1A5225A922694AB4003F4219 /* Build configuration list for PBXNativeTarget "Experiment439" */;
@@ -147,6 +206,10 @@
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = BackDrop;
 				TargetAttributes = {
+					1A2B3CD4226A39350074A818 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 1A52258D22694AB2003F4219;
+					};
 					1A52258D22694AB2003F4219 = {
 						CreatedOnToolsVersion = 10.2.1;
 					};
@@ -171,11 +234,19 @@
 			targets = (
 				1A52258D22694AB2003F4219 /* Experiment439 */,
 				1A52259F22694AB4003F4219 /* Experiment439Tests */,
+				1A2B3CD4226A39350074A818 /* VizcodeTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1A2B3CD3226A39350074A818 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1A52258C22694AB2003F4219 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -234,11 +305,21 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1A2B3CD1226A39350074A818 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A2B3CD8226A39350074A818 /* VizcodeTests.swift in Sources */,
+				1A2B3CE1226A39C30074A818 /* Scale.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1A52258A22694AB2003F4219 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				1A52259422694AB2003F4219 /* ViewController.swift in Sources */,
+				1A2B3CE0226A39C30074A818 /* Scale.swift in Sources */,
 				1A52259222694AB2003F4219 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,6 +335,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		1A2B3CDB226A39350074A818 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1A52258D22694AB2003F4219 /* Experiment439 */;
+			targetProxy = 1A2B3CDA226A39350074A818 /* PBXContainerItemProxy */;
+		};
 		1A5225A222694AB4003F4219 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 1A52258D22694AB2003F4219 /* Experiment439 */;
@@ -273,6 +359,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1A2B3CDD226A39350074A818 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = VizcodeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rhonabwy.VizcodeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Experiment439.app/Contents/MacOS/Experiment439";
+			};
+			name = Debug;
+		};
+		1A2B3CDE226A39350074A818 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = VizcodeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rhonabwy.VizcodeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Experiment439.app/Contents/MacOS/Experiment439";
+			};
+			name = Release;
+		};
 		1A5225A722694AB4003F4219 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -467,6 +591,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1A2B3CDC226A39350074A818 /* Build configuration list for PBXNativeTarget "VizcodeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A2B3CDD226A39350074A818 /* Debug */,
+				1A2B3CDE226A39350074A818 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		1A52258922694AB2003F4219 /* Build configuration list for PBXProject "Experiment439" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
