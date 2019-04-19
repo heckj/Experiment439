@@ -46,7 +46,8 @@ public struct LinearScale {
 /// normalize(a, b)(x) takes a domain value x in [a,b] and returns the corresponding parameter t in [0,1].
 func normalize(x: Double, domain: Range<Double>) -> Double {
     if domain.contains(x) {
-        let foo = (x - domain.lowerBound) / domain.upperBound
+        let overallDistance = domain.upperBound - domain.lowerBound
+        let foo = (x - domain.lowerBound) / overallDistance
         return foo
     }
     return Double.nan
@@ -54,7 +55,8 @@ func normalize(x: Double, domain: Range<Double>) -> Double {
 
 // https://github.com/d3/d3-interpolate#interpolateNumber
 func interpolate(x: Double, range: Range<Double>) -> Double {
-    // return domain.lowerBound + (domain.upperBound - domain.lowerBound) * (value - range.lowerBound) / (range.upperBound - range.lowerBound)
+    // return domain.lowerBound + (domain.upperBound - domain.lowerBound) *
+    //    (value - range.lowerBound) / (range.upperBound - range.lowerBound)
     return range.lowerBound * (1 - x) + range.upperBound * x
 }
 
