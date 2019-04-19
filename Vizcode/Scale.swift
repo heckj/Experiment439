@@ -23,11 +23,53 @@ public struct Scale<T: Comparable> {
 
 public struct LinearScale {
     public let isClamped: Bool
+    public let domain: Range<Double>
+    public let range: Range<Double>
 
     init(domain: Range<Double>, range: Range<Double>, isClamped: Bool) {
         self.isClamped = isClamped
+        self.domain = domain
+        self.range = range
+    }
+
+    /// returns an array of the locations of ticks
+    func ticks(count: Int = 10) -> [Double] {
+        var result: [Double] = Array()
+        for i in stride(from: 0, through: count, by: 1) {
+            print(i) // prints 0 to 10
+            result.append(interpolate(x: Double(i) / Double(count), range: domain))
+        }
+        return result
     }
 }
+
+/// normalize(a, b)(x) takes a domain value x in [a,b] and returns the corresponding parameter t in [0,1].
+func normalize(x: Double, domain: Range<Double>) -> Double {
+    if domain.contains(x) {
+        let foo = (x - domain.lowerBound) / domain.upperBound
+        return foo
+    }
+    return Double.nan
+}
+
+// https://github.com/d3/d3-interpolate#interpolateNumber
+func interpolate(x: Double, range: Range<Double>) -> Double {
+    // return domain.lowerBound + (domain.upperBound - domain.lowerBound) * (value - range.lowerBound) / (range.upperBound - range.lowerBound)
+    return range.lowerBound * (1 - x) + range.upperBound * x
+}
+
+// interpolate(a, b)(t) takes a parameter t in [0,1] and returns the corresponding range value x in [a,b].
+// function normalize(a, b) {
+//    return (b -= (a = +a))
+//        ? function(x) { return (x - a) / b; }
+//        : constant(isNaN(b) ? NaN : 0.5);
+// }
+// function bimap(domain, range, interpolate) {
+//    var d0 = domain[0], d1 = domain[1], r0 = range[0], r1 = range[1];
+//    if (d1 < d0) d0 = normalize(d1, d0), r0 = interpolate(r1, r0);
+//    else d0 = normalize(d0, d1), r0 = interpolate(r0, r1);
+//    return function(x) { return r0(d0(x)); };
+// }
 
 /*
  Scale
