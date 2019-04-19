@@ -21,15 +21,15 @@ view the schemes and targets:
 
 view destinations:
 
-    xcodebuild -scheme picturegrid -showdestinations
+    xcodebuild -scheme Experiment439 -showdestinations
 
 do a build:
 
-    xcodebuild -scheme picturegrid -sdk iphoneos12.2 -configuration Debug
-    xcodebuild -scheme picturegrid -sdk iphoneos12.2 -configuration Release
+    xcodebuild -scheme Experiment439 -configuration Debug
+    xcodebuild -scheme Experiment439 -configuration Release
 
 run the tests:
 
-    xcodebuild clean test -scheme picturegrid -sdk iphoneos12.2 -destination 'platform=iOS Simulator,OS=12.2,name=iPhone 5s' | xcpretty --color
+    xcodebuild clean test -scheme Experiment439 | xcpretty --color
 
 
