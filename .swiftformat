@@ -1,0 +1,43 @@
+# file options
+
+--exclude dependencies
+
+# format options
+--allman false
+--binarygrouping none
+--closingparen same-line
+--commas inline
+--decimalgrouping none
+--elseposition same-line
+--empty void
+--exponentcase lowercase
+--exponentgrouping disabled
+--fractiongrouping disabled
+--header ignore
+--hexgrouping none
+--hexliteralcase lowercase
+--ifdef indent
+--importgrouping alphabetized
+--indent 4
+--indentcase false
+--linebreaks lf
+--octalgrouping none
+--operatorfunc no-space
+--patternlet inline
+--ranges no-space
+--self remove
+--selfrequired
+--semicolons inline
+--stripunusedargs closure-only
+--trailingclosures
+--trimwhitespace always
+--wraparguments preserve
+--wrapcollections preserve
+
+# rules
+
+--enable isEmpty
+--enable blankLinesBetweenScopes
+--enable todos
+--enable blankLinesAroundMark
+--enable linebreakAtEndOfFile
