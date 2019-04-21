@@ -10,9 +10,9 @@ import Foundation
 import SceneKit
 
 public protocol DataItemValueProvider {
-    func xValue(_ datapoint: Any) -> Double
-    func yValue(_ datapoint: Any) -> Double
-    func zValue(_ datapoint: Any) -> Double
+    func xValue(_ datapoint: Any) -> CGFloat
+    func yValue(_ datapoint: Any) -> CGFloat
+    func zValue(_ datapoint: Any) -> CGFloat
 
     // x, y, z location seems relevant, but we also have some other interesting possibilities:
     // size of the 3D geometry to placed
@@ -41,7 +41,7 @@ public class DataSpace: SCNNode {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func reloadData() {}
-    func addData() {}
-    func removeData() {}
+    func reloadData() {} // removes all existing nodes and re-creates them from datasource
+    func addData() {} // add specific data nodes from datasource
+    func removeData() {} // remove specific data nodes from datasource
 }
