@@ -44,6 +44,7 @@ public struct Scale<T: Comparable> {
     public let clamp = false
 }
 
+// want to make a PowScale (& maybe Sqrt, Log, Ln)
 public struct LinearScale {
     public let isClamped: Bool
     public let domain: Range<Double>
