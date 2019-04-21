@@ -1,10 +1,11 @@
 # Experiment439
 
-An experiment in creating the SceneKit structures (SCNNodes, primarily) to provide visualizations of data. The idea
-being to take some of the visualization concepts of D3 and kick them up into 3D structures, providing a means to 
-update the data, interact with it, and generally provide "useful" data visualization tooling.
+An experiment in creating useful 3D visualizations using Apple's SceneKit. The visualizations are aimed at 
+general data visualization, similiar to charts and graphs, and taking quite a bit of inspiration from D3. The resulting
+SceneKit files are aimed at being animatable, dynamic, and interactive, depending on the visualization.
 
-The experiment is inspired by D3 and other charting libraries (such as IOSCharts) to provide the tooling to create visualizations in a meaningful, useful, and easy-to-use way.
+The experiment is partially about the visualizations, and partially to work out an effect API for a 3D visualization toolkit,
+inspired by D3 and other charting libraries (such as IOSCharts).
 
 ## build and dev tooling
 
@@ -38,4 +39,12 @@ run the tests:
 
     xcodebuild clean test -scheme Experiment439 | xcpretty --color
 
+
+scenekit tutorials:
+- https://code.tutsplus.com/tutorials/combining-the-power-of-spritekit-and-scenekit--cms-24049
+- https://code.tutsplus.com/tutorials/an-introduction-to-scenekit-user-interaction-animations-physics--cms-23877
+- https://github.com/rogerboesch/SceneKitTutorial
+- https://www.raywenderlich.com/1260-scene-kit-tutorial-with-swift-part-2-nodes
+- https://code.tutsplus.com/tutorials/an-introduction-to-scenekit-fundamentals--cms-23847
+- https://developer.apple.com/documentation/scenekit/organizing_a_scene_with_nodes
 
