@@ -30,9 +30,24 @@ public enum AxisDirection {
     case z
 }
 
-public struct Axis {
-    public let scale: LinearScale
+public class Axis: SCNNode {
+    public let internalScale: LinearScale
     public let direction: AxisDirection
+
+    public init(scale: LinearScale, direction: AxisDirection) {
+        self.internalScale = scale
+        self.direction = direction
+        super.init()
+
+        // add children to render the scene as needed
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    // func ticks() uses internalScale.ticks to determine location for ticks
+
 }
 
 /*
@@ -67,5 +82,30 @@ public struct Axis {
  So maybe we start with computed properties of Axis to generate SCNNode classes on request/demand, but
  don't keep any references to existing SCNNodes for updating - separating concerns for generating and
  updating, at least to start...
+
+ call it a xxxCoordinator
+  - subclass SCNNode
+  - applies material, sizes, maybe even locates/transforms
+  - init() creates it's own children nodes as needed
+
+  - ScatterViz
+    +- xAxis
+    +- yAxis
+    +- zAxis
+    +- Legend
+    +- Title
+    +- DataView
+DataView.init()? sets up delegate/data source?
+ - reloadView()
+ - addData() (if you know diff)
+ - removeData() (if you know diff)
+
+ DataSource:
+  - count
+  - dataAtIndex
+ maybe some binding to each access in DataSource ref - closures that will provide the answer?
+ (sorted? ordered data for enumeration?)
+
+ collection subtype - some way to say "iterate over axis X, get Y (and maybe Z) values"
 
  */
