@@ -1,5 +1,10 @@
 # Experiment439
 
+An experiment in creating the SceneKit structures (SCNNodes, primarily) to provide visualizations of data. The idea
+being to take some of the visualization concepts of D3 and kick them up into 3D structures, providing a means to 
+update the data, interact with it, and generally provide "useful" data visualization tooling.
+
+The experiment is inspired by D3 and other charting libraries (such as IOSCharts) to provide the tooling to create visualizations in a meaningful, useful, and easy-to-use way.
 
 ## build and dev tooling
 
