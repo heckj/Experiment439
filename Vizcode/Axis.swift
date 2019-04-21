@@ -35,19 +35,19 @@ public class Axis: SCNNode {
     public let direction: AxisDirection
 
     public init(scale: LinearScale, direction: AxisDirection) {
-        self.internalScale = scale
+        internalScale = scale
         self.direction = direction
         super.init()
 
         // add children to render the scene as needed
     }
 
+    @available(*, unavailable)
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
     // func ticks() uses internalScale.ticks to determine location for ticks
-
 }
 
 /*
@@ -95,7 +95,7 @@ public class Axis: SCNNode {
     +- Legend
     +- Title
     +- DataView
-DataView.init()? sets up delegate/data source?
+ DataView.init()? sets up delegate/data source?
  - reloadView()
  - addData() (if you know diff)
  - removeData() (if you know diff)
