@@ -10,10 +10,14 @@ import Foundation
 import SceneKit
 
 class Box: SCNNode {
-    init(radius: CGFloat = 1.0, color: NSColor) {
+    init(width: CGFloat = 1.0,
+         height: CGFloat = 1.0,
+         length: CGFloat = 1.0,
+         chamferRadius: CGFloat = 0.1,
+         color: NSColor) {
         super.init()
 
-        geometry = SCNBox()
+        geometry = SCNBox(width: width, height: height, length: length, chamferRadius: chamferRadius)
         // init(width: CGFloat, height: CGFloat, length: CGFloat, chamferRadius: CGFloat)
 
         let material = SCNMaterial()

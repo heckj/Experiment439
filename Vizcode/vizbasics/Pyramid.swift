@@ -10,10 +10,10 @@ import Foundation
 import SceneKit
 
 class Pyramid: SCNNode {
-    init(radius: CGFloat = 1.0, color: NSColor) {
+    init(width: CGFloat = 1.0, height: CGFloat = 1.0, length: CGFloat = 1.0, color: NSColor) {
         super.init()
 
-        geometry = SCNPyramid()
+        geometry = SCNPyramid(width: width, height: height, length: length)
         // init(width: CGFloat, height: CGFloat, length: CGFloat)
 
         let material = SCNMaterial()

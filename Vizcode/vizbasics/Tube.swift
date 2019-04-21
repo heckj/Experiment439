@@ -10,11 +10,10 @@ import Foundation
 import SceneKit
 
 class Tube: SCNNode {
-    init(radius: CGFloat = 1.0, color: NSColor) {
+    init(innerRadius: CGFloat = 0.5, outerRadius: CGFloat = 1.0, height: CGFloat = 1.0, color: NSColor) {
         super.init()
 
-        geometry = SCNTube()
-        // init(innerRadius: CGFloat, outerRadius: CGFloat, height: CGFloat)
+        geometry = SCNTube(innerRadius: innerRadius, outerRadius: outerRadius, height: height)
 
         let material = SCNMaterial()
         material.diffuse.contents = color
@@ -24,4 +23,3 @@ class Tube: SCNNode {
     @available(*, unavailable)
     required init?(coder aDecoder: NSCoder) { fatalError("Sphere Node Coder Not Implemented") }
 }
-

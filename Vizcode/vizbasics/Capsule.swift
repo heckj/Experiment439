@@ -10,10 +10,10 @@ import Foundation
 import SceneKit
 
 class Capsule: SCNNode {
-    init(radius: CGFloat = 1.0, color: NSColor) {
+    init(capRadius: CGFloat = 1.0, height: CGFloat = 1.0, color: NSColor) {
         super.init()
 
-        geometry = SCNCapsule()
+        geometry = SCNCapsule(capRadius: capRadius, height: height)
         // init(capRadius: CGFloat, height: CGFloat)
 
         let material = SCNMaterial()
@@ -24,4 +24,3 @@ class Capsule: SCNNode {
     @available(*, unavailable)
     required init?(coder aDecoder: NSCoder) { fatalError("Sphere Node Coder Not Implemented") }
 }
-
