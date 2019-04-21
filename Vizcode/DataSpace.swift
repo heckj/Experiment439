@@ -13,6 +13,10 @@ public protocol DataItemValueProvider {
     func xValue(_ datapoint: Any) -> Double
     func yValue(_ datapoint: Any) -> Double
     func zValue(_ datapoint: Any) -> Double
+
+    // x, y, z location seems relevant, but we also have some other interesting possibilities:
+    // size of the 3D geometry to placed
+    // color/material of the 3D geometry (or maybe an explicit shader)
 }
 
 public protocol DataSpaceDataSource: NSObjectProtocol {
