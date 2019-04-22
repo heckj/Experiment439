@@ -83,7 +83,7 @@
 		1A5225A022694AB4003F4219 /* Experiment439Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Experiment439Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A5225A422694AB4003F4219 /* Experiment439Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Experiment439Tests.swift; sourceTree = "<group>"; };
 		1A5225A622694AB4003F4219 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1A5225AF22694B23003F4219 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		1A5225AF22694B23003F4219 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; lineEnding = 0; path = README.md; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.markdown; };
 		1AFC08FC226CCD3800B9257B /* Legend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Legend.swift; sourceTree = "<group>"; };
 		1AFC08FF226CCD5100B9257B /* Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title.swift; sourceTree = "<group>"; };
 		1AFC0902226CCE1E00B9257B /* DataSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSpace.swift; sourceTree = "<group>"; };
