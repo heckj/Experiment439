@@ -32,7 +32,8 @@ public enum AxisDirection {
 
 public class Axis: SCNNode {
     // NOTE(heckj): figure out how to reframe this in terms of a generic "Scale",
-    // which is a protocol with an associated type...
+    // (which is a protocol with an associated type) so we could theoretically use
+    // a TimeScale here instead of LinearScale - or infer it from the initializer.
     public let internalScale: LinearScale
     public let direction: AxisDirection
 

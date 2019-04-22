@@ -31,7 +31,7 @@ public protocol DataSpaceDataSource: NSObjectProtocol {
 
 public class DataSpace: SCNNode {
     private let x: Int // need to add some sort of delegate
-    public let datasource: DataSpaceDataSource?
+    public let datasource: [DataSpaceDataSource]?
 
     public init(x: Int) {
         self.x = x
@@ -39,12 +39,19 @@ public class DataSpace: SCNNode {
         super.init()
 
         // add children to render the scene as needed
+        // we might also need references to one or more Axis objects, so that we can use
+        // the included Scale's within them to determine location/translation within the plot -
+        // morphing data returned from the struct/obj implementing DataSpaceDataSource protocol
     }
 
     @available(*, unavailable)
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
+    // ?
+    func addDataSource(dsds: DataSpaceDataSource) {}
+    func removeDataSource(dsds: DataSpaceDataSource) {}
 
     func reloadData() {} // removes all existing nodes and re-creates them from datasource
     func addData() {} // add specific data nodes from datasource

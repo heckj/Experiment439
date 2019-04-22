@@ -80,6 +80,10 @@ public class ScatterPlot: SCNNode {
         super.init()
 
         // add children to render the scene as needed
+        // - add at least one axis (or start with an Axis in init)
+        //   then add a DataSpace, referencing the Axis?
+        // - optionally add a legend, maybe with a 3D Constraint to the scene's overall camera
+        // - optionally add a title, maybe with a 3D Constraint to the scene's overall camera
     }
 
     // func addAxis() - provide a scale & domain, and direction
