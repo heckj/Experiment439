@@ -11,7 +11,7 @@ import Foundation
 // https://github.com/d3/d3-scale/blob/master/src/time.js
 
 /// Time scales are similar to linear scales, but use Dates instead of numbers and range is
-/// implied/identify from the domain
+/// implied/identify from the domain provided
 
 // import { scaleTime } from 'd3-scale';
 // const time = scaleTime()
@@ -19,6 +19,8 @@ import Foundation
 //
 //// for UTC
 // const utc = d3.scaleUtc();
+// https://github.com/d3/d3-scale#scaleUtc
+// https://github.com/d3/d3-3.x-api-reference/blob/master/Time-Scales.md
 
 public struct TimeScale: Scale {
     public let isClamped: Bool
@@ -36,13 +38,15 @@ public struct TimeScale: Scale {
     /// - Parameter x: value within the domain
     /// - Returns: scaled value
     public func scale(_ inputValue: Date) -> CGFloat {
-        return 0.0
-        // interpolate(normalize(inputValue, domain: domain), range: range)
+        return CGFloat(inputValue.timeIntervalSince1970) // - domain.lowerBound.timeIntervalSince1970)
     }
 
     public func invert(_ outputValue: CGFloat) -> Date {
-        return Date()
-        // interpolate(normalize(outputValue, domain: range), range: domain)
+        let attemptedDate = Date(timeIntervalSince1970: Double(outputValue))
+//        if domain.contains(attemptedDate) {
+//            return attemptedDate
+//        }
+        return attemptedDate
     }
 
     /// returns an array of the locations of ticks
