@@ -10,31 +10,23 @@ import Foundation
 import SceneKit
 
 /*
- So my hypothetical 3d-viz for an equiv of a scatterplot:
+ 3d-viz for an equiv of a scatterplot:
 
- --+ root SCNNode
- |
- +- xAxis
- +- yAxis
- +- plotPlane
- +- legend
-
- call it a xxxCoordinator
  - subclass SCNNode
- - applies material, sizes, maybe even locates/transforms
+   - each SCNode has a frame of reference (position, scale, transform)
+   - an SCNNode *may* also have geometry, and each geometry has it's own material
+   - have the children node have the relevant geometry to make up the visual structures within
+     the nodes general frame of reference
+   - applies material, sizes, maybe even scale transforms
  - init() creates it's own children nodes as needed
 
- - ScatterViz
- +- xAxis
- +- yAxis
- +- zAxis
- +- Legend
- +- Title
- +- DataView
- DataView.init()? sets up delegate/data source?
- - reloadView()
- - addData() (if you know diff)
- - removeData() (if you know diff)
+ -+- ScatterViz (SCNNode)
+  +- DataSpace (SCNNode + children) (need at least one axis defined...)
+  +- Axis (Scale, Direction, SCNNode + children)
+  +- yAxis (opt)
+  +- zAxis (opt)
+  +- Legend (opt) (SCNNode + children)
+  +- Title (opt) (SCNNode + children)
 
  Interaction components:
   - camera (expected to be defined prior to scene element generation)
@@ -43,6 +35,29 @@ import SceneKit
  external the this setup
  - lighting
  - maybe a floor
+
+ Using this stuff:
+  - create a plot - maybe defining bounds in which you'd like to use it
+  - create an Axis (with assocaited Scale) and add to the plot along with an associated DataSource
+    - so you've got the thing providing the data (protocol enforced) and how to translate that
+      into the bounds of the plot. The scale for the axis might infer a default vslue (or explicitly use
+      the default value) of the bounds? Or maybe the bounds are defined by the Axis provided - which has
+      a sort of length akin to it...
+
+ api/dev usage ideas:
+
+ 1) create plot
+   - used for overall placeholder and location/rotation tweaking - and to add everything (or
+     incrementally add) data to the view/scene as you go. Maybe it also enables some "animation"
+     of the data into place later...
+ 2) define an axis (or two) and add to plot
+   - scale used for the Axis (req) - does the mapping for at least one dimension (incoming domain, outgoing range)
+   - use axis->scale struct->range property to determine the "virtual size" of this space
+ 3) Add a datasource, along with a reference to at least one axis, to know how to plot it
+   - I think we want to have a relation between axis and datasource (axis used to interp datasource data)
+     but we probably want to allow all axis' to use a single data source
+   - the reverse - adding multiple datasources, using the same axis, should plot parallel (or overlaid?) views, and would be how you create the layered views kind of setup
+   - which properties (or func's) of the Datasource protocol get used will depend on the plot I expect
 
  */
 
