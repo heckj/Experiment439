@@ -13,8 +13,7 @@ import Foundation
 /// - https://github.com/pshrmn/notes/blob/master/d3/scales.md
 
 // defining the protocol for this, using Protocols and Associated Types
-// This is kind of confusing if you've not been down that road, and there's a pretty
-// good article on it at
+// This can be confusing - there's a pretty good article on it at
 // https://www.hackingwithswift.com/articles/74/understanding-protocol-associated-types-and-their-constraints
 
 public protocol Scale {
