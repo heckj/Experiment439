@@ -9,15 +9,15 @@
 import XCTest
 
 class LinearScaleTests: XCTestCase {
-    var inputRange: Range<Double>?
-    var outputRange: Range<Double>?
+    var inputRange: ClosedRange<Double>?
+    var outputRange: ClosedRange<Double>?
     var scaleUnderTest: LinearScale?
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         super.setUp()
-        inputRange = 0..<100.0
-        outputRange = 0..<50.0
+        inputRange = 0...100.0
+        outputRange = 0...50.0
         scaleUnderTest = LinearScale(domain: inputRange!, range: outputRange!, isClamped: false)
     }
 
@@ -48,7 +48,7 @@ class LinearScaleTests: XCTestCase {
     }
 
     func testLinearScale_scaleUpper() {
-        let resultValue = scaleUnderTest?.scale(99.9)
+        let resultValue = scaleUnderTest?.scale(100.0)
         XCTAssertEqual(50.0, resultValue!, accuracy: 0.1)
     }
 
@@ -75,8 +75,8 @@ class LinearScaleTests: XCTestCase {
     }
 
     func testLinearScale_invertUpper() {
-        let resultValue = scaleUnderTest?.invert(49.9)
-        XCTAssertEqual(99.8, resultValue!, accuracy: 0.1)
+        let resultValue = scaleUnderTest?.invert(50.0)
+        XCTAssertEqual(100.0, resultValue!, accuracy: 0.1)
     }
 
     func testLinearScale_invertBelow() {

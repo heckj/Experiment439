@@ -8,12 +8,13 @@
 
 import Foundation
 
+/// A linear scale takes input from a continuous domain and maps it to a continuous range.
 public struct LinearScale: Scale {
     public let isClamped: Bool
-    public let domain: Range<Double>
-    public let range: Range<Double>
+    public let domain: ClosedRange<Double>
+    public let range: ClosedRange<Double>
 
-    init(domain: Range<Double>, range: Range<Double>, isClamped: Bool) {
+    init(domain: ClosedRange<Double>, range: ClosedRange<Double>, isClamped: Bool) {
         self.isClamped = isClamped
         self.domain = domain
         self.range = range

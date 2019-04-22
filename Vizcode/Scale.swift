@@ -21,8 +21,8 @@ public protocol Scale {
     associatedtype ComparableType: Comparable
 
     var isClamped: Bool { get }
-    var domain: Range<ComparableType> { get }
-    var range: Range<ComparableType> { get }
+    var domain: ClosedRange<ComparableType> { get }
+    var range: ClosedRange<ComparableType> { get }
 
 //    func init(domain: Range<ComparableType>, range: Range<ComparableType>, isClamped: Bool)
     func scale(_ inputValue: ComparableType) -> ComparableType
@@ -56,7 +56,7 @@ public protocol Scale {
 // MARK: - general functions used in various implementations of Scale
 
 /// normalize(a, b)(x) takes a domain value x in [a,b] and returns the corresponding parameter t in [0,1].
-func normalize(_ x: Double, domain: Range<Double>) -> Double {
+func normalize(_ x: Double, domain: ClosedRange<Double>) -> Double {
     if domain.contains(x) {
         let overallDistance = domain.upperBound - domain.lowerBound
         let foo = (x - domain.lowerBound) / overallDistance
@@ -67,6 +67,6 @@ func normalize(_ x: Double, domain: Range<Double>) -> Double {
 
 // inspiration - https://github.com/d3/d3-interpolate#interpolateNumber
 /// interpolate(a, b)(t) takes a parameter t in [0,1] and returns the corresponding range value x in [a,b].
-func interpolate(_ x: Double, range: Range<Double>) -> Double {
+func interpolate(_ x: Double, range: ClosedRange<Double>) -> Double {
     return range.lowerBound * (1 - x) + range.upperBound * x
 }
