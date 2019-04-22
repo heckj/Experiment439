@@ -14,7 +14,7 @@ class Sphere: SCNNode {
         super.init()
 
         geometry = SCNSphere(radius: radius)
-        
+
         let material = SCNMaterial()
         material.diffuse.contents = color
         geometry?.firstMaterial = material

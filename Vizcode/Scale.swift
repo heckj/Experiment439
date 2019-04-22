@@ -37,16 +37,23 @@ import Foundation
 /// Inspired by D3's scale concept - maps input values (domain) to an output range (range)
 /// https://github.com/pshrmn/notes/blob/master/d3/scales.md
 
-public struct Scale<T: Comparable> {
-    /// input values for the scale
-    public let domain: Range<T>
-    /// the output values possible for the scale
-    public let range: Range<T>
-    /// should the input values be clamped to the edges of the domain
-    public let clamp = false
+// defining the protocol for this, using Protocols and Associated Types
+// kind of confusing if you've not been down that road, and there's a pretty good article
+// on it at https://www.hackingwithswift.com/articles/74/understanding-protocol-associated-types-and-their-constraints
+
+public protocol Scale {
+    associatedtype ComparableType: Comparable
+
+    var isClamped: Bool { get }
+    var domain: Range<ComparableType> { get }
+    var range: Range<ComparableType> { get }
+
+    func scale(_ inputValue: ComparableType) -> ComparableType
+    func invert(_ outputValue: ComparableType) -> ComparableType
+    func ticks(count: Int) -> [ComparableType]
 }
 
-// NOTE(heckj): want to make a PowScale (& maybe Sqrt, Log, Ln)
+// NOTE(heckj): OTHER SCALES: make a PowScale (& maybe Sqrt, Log, Ln)
 
 // Quantize scale: Quantize scales use a discrete range and a continuous domain.
 //   Range mapping is done by dividing the domain domain evenly by the number of elements
@@ -69,7 +76,7 @@ public struct Scale<T: Comparable> {
 // Band Scale
 // Point Scale
 
-public struct LinearScale {
+public struct LinearScale: Scale {
     public let isClamped: Bool
     public let domain: Range<Double>
     public let range: Range<Double>
@@ -84,11 +91,11 @@ public struct LinearScale {
     ///
     /// - Parameter x: value within the domain
     /// - Returns: scaled value
-    func scale(_ inputValue: Double) -> Double {
+    public func scale(_ inputValue: Double) -> Double {
         return interpolate(normalize(inputValue, domain: domain), range: range)
     }
 
-    func invert(_ outputValue: Double) -> Double {
+    public func invert(_ outputValue: Double) -> Double {
         return interpolate(normalize(outputValue, domain: range), range: domain)
     }
 
@@ -96,7 +103,7 @@ public struct LinearScale {
     ///
     /// - Parameter count: number of steps to take in the ticks, default of 10
     /// - Returns: array of the locations of the ticks within self.range
-    func ticks(count: Int = 10) -> [Double] {
+    public func ticks(count: Int = 10) -> [Double] {
         var result: [Double] = Array()
         for i in stride(from: 0, through: count, by: 1) {
             result.append(interpolate(Double(i) / Double(count), range: domain))
