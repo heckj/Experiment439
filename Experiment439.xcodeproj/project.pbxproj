@@ -72,6 +72,7 @@
 		1A2B3CE6226A63920074A818 /* Axis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Axis.swift; sourceTree = "<group>"; };
 		1A4B55B0226E2D600089FD82 /* LinearScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearScale.swift; sourceTree = "<group>"; };
 		1A4B55B3226E3A2A0089FD82 /* TimeScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeScale.swift; sourceTree = "<group>"; };
+		1A4B55B6226E5CFE0089FD82 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		1A52258E22694AB2003F4219 /* Experiment439.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Experiment439.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A52259122694AB2003F4219 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A52259322694AB2003F4219 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -152,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				1A5225AF22694B23003F4219 /* README.md */,
+				1A4B55B6226E5CFE0089FD82 /* LICENSE */,
 				1A2B3CD0226A38E40074A818 /* Vizcode */,
 				1A52259022694AB2003F4219 /* Experiment439 */,
 				1A5225A322694AB4003F4219 /* Experiment439Tests */,
