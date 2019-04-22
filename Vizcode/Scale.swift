@@ -21,10 +21,13 @@ public protocol Scale {
     associatedtype ComparableType: Comparable
 
     var isClamped: Bool { get }
+
+    // input values
     var domain: ClosedRange<ComparableType> { get }
+
+    // output values
     var range: ClosedRange<ComparableType> { get }
 
-//    func init(domain: Range<ComparableType>, range: Range<ComparableType>, isClamped: Bool)
     func scale(_ inputValue: ComparableType) -> ComparableType
     func invert(_ outputValue: ComparableType) -> ComparableType
     func ticks(count: Int) -> [ComparableType]

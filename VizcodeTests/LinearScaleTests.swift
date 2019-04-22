@@ -18,7 +18,7 @@ class LinearScaleTests: XCTestCase {
         super.setUp()
         inputRange = 0...100.0
         outputRange = 0...50.0
-        scaleUnderTest = LinearScale(domain: inputRange!, range: outputRange!, isClamped: false)
+        scaleUnderTest = LinearScale(domain: inputRange!, range: outputRange!)
     }
 
     override func tearDown() {
@@ -37,9 +37,9 @@ class LinearScaleTests: XCTestCase {
 
     // MARK: - scale tests
 
-    func testLinearScale_scaleMid() {
-        let resultValue = scaleUnderTest?.scale(50.0)
-        XCTAssertEqual(25.0, resultValue!, accuracy: 0.1)
+    func testLinearScale_scaleBelow() {
+        let resultValue = scaleUnderTest?.scale(-10.0)
+        XCTAssertTrue(resultValue!.isNaN)
     }
 
     func testLinearScale_scaleLower() {
@@ -47,14 +47,14 @@ class LinearScaleTests: XCTestCase {
         XCTAssertEqual(0.0, resultValue!, accuracy: 0.1)
     }
 
+    func testLinearScale_scaleMid() {
+        let resultValue = scaleUnderTest?.scale(50.0)
+        XCTAssertEqual(25.0, resultValue!, accuracy: 0.1)
+    }
+
     func testLinearScale_scaleUpper() {
         let resultValue = scaleUnderTest?.scale(100.0)
         XCTAssertEqual(50.0, resultValue!, accuracy: 0.1)
-    }
-
-    func testLinearScale_scaleBelow() {
-        let resultValue = scaleUnderTest?.scale(-10.0)
-        XCTAssertTrue(resultValue!.isNaN)
     }
 
     func testLinearScale_scaleAbove() {
@@ -64,9 +64,9 @@ class LinearScaleTests: XCTestCase {
 
     // MARK: - invert tests
 
-    func testLinearScale_invertMid() {
-        let resultValue = scaleUnderTest?.invert(25.0)
-        XCTAssertEqual(50.0, resultValue!, accuracy: 0.1)
+    func testLinearScale_invertBelow() {
+        let resultValue = scaleUnderTest?.invert(-10.0)
+        XCTAssertTrue(resultValue!.isNaN)
     }
 
     func testLinearScale_invertLower() {
@@ -74,14 +74,14 @@ class LinearScaleTests: XCTestCase {
         XCTAssertEqual(0.0, resultValue!, accuracy: 0.1)
     }
 
+    func testLinearScale_invertMid() {
+        let resultValue = scaleUnderTest?.invert(25.0)
+        XCTAssertEqual(50.0, resultValue!, accuracy: 0.1)
+    }
+
     func testLinearScale_invertUpper() {
         let resultValue = scaleUnderTest?.invert(50.0)
         XCTAssertEqual(100.0, resultValue!, accuracy: 0.1)
-    }
-
-    func testLinearScale_invertBelow() {
-        let resultValue = scaleUnderTest?.invert(-10.0)
-        XCTAssertTrue(resultValue!.isNaN)
     }
 
     func testLinearScale_invertAbove() {

@@ -14,7 +14,7 @@ public struct LinearScale: Scale {
     public let domain: ClosedRange<Double>
     public let range: ClosedRange<Double>
 
-    init(domain: ClosedRange<Double>, range: ClosedRange<Double>, isClamped: Bool) {
+    init(domain: ClosedRange<Double>, range: ClosedRange<Double>, isClamped: Bool = false) {
         self.isClamped = isClamped
         self.domain = domain
         self.range = range
