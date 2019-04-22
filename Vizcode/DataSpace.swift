@@ -9,19 +9,22 @@
 import Foundation
 import SceneKit
 
-public protocol DataItemValueProvider {
+public protocol DataPointValueProvider {
+    // x, y, z location seems relevant
     func xValue(_ datapoint: Any) -> CGFloat
     func yValue(_ datapoint: Any) -> CGFloat
     func zValue(_ datapoint: Any) -> CGFloat
 
-    // x, y, z location seems relevant, but we also have some other interesting possibilities:
-    // size of the 3D geometry to placed
-    // color/material of the 3D geometry (or maybe an explicit shader)
+    func node(_ datapoint: Any) -> SCNNode
+    // includes:
+    // - color/material
+    // - shape
+    // - size/scale adjustments
 }
 
 public protocol DataSpaceDataSource: NSObjectProtocol {
     func numberOfItems(for dataSpace: DataSpace) -> Int
-    func dataPoint(_ dataSpace: DataSpace, ItemAt index: Int) -> DataItemValueProvider
+    func dataPoint(_ dataSpace: DataSpace, ItemAt index: Int) -> DataPointValueProvider
 }
 
 public class DataSpace: SCNNode {
