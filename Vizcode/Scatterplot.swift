@@ -61,7 +61,7 @@ public class ScatterPlot: SCNNode {
     //   - hand back a datapoint for each index/count and then get X, Y, Z (and anything else) from
     //     that data object
     // - format the data such that you can iterate through the data source methods to get the
-    //   values you want. 
+    //   values you want.
 
     // IOSCharts has a concept of "datasets" - and a single chart can have multiple of them displayed
     // in a single view. That sort of matches (more closely anyway) this datasource concept - only there

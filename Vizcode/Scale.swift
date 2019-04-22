@@ -35,6 +35,8 @@ import Foundation
  */
 
 /// Inspired by D3's scale concept - maps input values (domain) to an output range (range)
+/// https://github.com/pshrmn/notes/blob/master/d3/scales.md
+
 public struct Scale<T: Comparable> {
     /// input values for the scale
     public let domain: Range<T>
@@ -44,7 +46,29 @@ public struct Scale<T: Comparable> {
     public let clamp = false
 }
 
-// want to make a PowScale (& maybe Sqrt, Log, Ln)
+// NOTE(heckj): want to make a PowScale (& maybe Sqrt, Log, Ln)
+
+// Quantize scale: Quantize scales use a discrete range and a continuous domain.
+//   Range mapping is done by dividing the domain domain evenly by the number of elements
+//   in the range. Because the range is discrete, the values do not have to be numbers.
+
+// Quantile scale: Quantile scales are similar to quantize scales, but instead of evenly
+//   dividing the domain, they determine threshold values based on the domain that are
+//   used as the cutoffs between values in the range.
+//   Quantile scales take an array of values for a domain (not just a lower and upper limit)
+//   and maps range to be an even distribution over the input domain
+
+// Threshold Scale
+
+// Time Scale
+// - https://github.com/d3/d3-scale/blob/master/src/time.js
+// - D3 has a time format (https://github.com/d3/d3-time-format), but we can probably use
+//   IOS/MacOS NSTime, NSDate formatters and calendrical mechanisms
+
+// Ordinal Scale
+// Band Scale
+// Point Scale
+
 public struct LinearScale {
     public let isClamped: Bool
     public let domain: Range<Double>
@@ -62,6 +86,10 @@ public struct LinearScale {
     /// - Returns: scaled value
     func scale(_ inputValue: Double) -> Double {
         return interpolate(normalize(inputValue, domain: domain), range: range)
+    }
+
+    func invert(_ outputValue: Double) -> Double {
+        return interpolate(normalize(outputValue, domain: range), range: domain)
     }
 
     /// returns an array of the locations of ticks

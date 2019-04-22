@@ -26,12 +26,16 @@ class LinearScaleTests: XCTestCase {
         super.tearDown()
     }
 
+    // MARK: - initializer tests
+
     func testLinearScaleInitializer() {
         XCTAssertNotNil(scaleUnderTest)
         XCTAssertFalse(scaleUnderTest!.isClamped)
         XCTAssertEqual(inputRange, scaleUnderTest?.domain, "domain should match input range")
         XCTAssertEqual(outputRange, scaleUnderTest?.range, "range should match output range")
     }
+
+    // MARK: - scale tests
 
     func testLinearScale_scaleMid() {
         let resultValue = scaleUnderTest?.scale(50.0)
@@ -57,6 +61,35 @@ class LinearScaleTests: XCTestCase {
         let resultValue = scaleUnderTest?.scale(110.0)
         XCTAssertTrue(resultValue!.isNaN)
     }
+
+    // MARK: - invert tests
+
+    func testLinearScale_invertMid() {
+        let resultValue = scaleUnderTest?.invert(25.0)
+        XCTAssertEqual(50.0, resultValue!, accuracy: 0.1)
+    }
+
+    func testLinearScale_invertLower() {
+        let resultValue = scaleUnderTest?.invert(0.0)
+        XCTAssertEqual(0.0, resultValue!, accuracy: 0.1)
+    }
+
+    func testLinearScale_invertUpper() {
+        let resultValue = scaleUnderTest?.invert(49.9)
+        XCTAssertEqual(99.8, resultValue!, accuracy: 0.1)
+    }
+
+    func testLinearScale_invertBelow() {
+        let resultValue = scaleUnderTest?.invert(-10.0)
+        XCTAssertTrue(resultValue!.isNaN)
+    }
+
+    func testLinearScale_invertAbove() {
+        let resultValue = scaleUnderTest?.invert(60.0)
+        XCTAssertTrue(resultValue!.isNaN)
+    }
+
+    // MARK: - tick tests
 
     func testTicks_default() {
         let results = scaleUnderTest?.ticks()
