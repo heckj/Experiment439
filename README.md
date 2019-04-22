@@ -7,16 +7,16 @@ SceneKit files are aimed at being animatable, dynamic, and interactive, dependin
 The experiment is partially about the visualizations, and partially to work out an effect API for a 3D visualization toolkit,
 inspired by D3 and other charting libraries (such as IOSCharts).
 
-## build and dev tooling
+## dev tooling dependencies
 
 Xcode and a few helpers:
 
     brew install swiftlint
     brew install swiftformat
 
-(because I tend to be pretty inconsistent and like the warnings)
+(using linters and formatters because I tend to be pretty inconsistent and appreciate the warnings)
 
-## Command Line Building
+## Command Line Building & Testing
 
 view all the settings:
 
@@ -39,6 +39,7 @@ run the tests:
 
     xcodebuild clean test -scheme Experiment439 | xcpretty --color
 
+## Related Reading
 
 SceneKit tutorials:
 
@@ -49,6 +50,8 @@ SceneKit tutorials:
 - https://code.tutsplus.com/tutorials/an-introduction-to-scenekit-fundamentals--cms-23847
 - https://www.raywenderlich.com/1260-scene-kit-tutorial-with-swift-part-2-nodes
 - https://github.com/rogerboesch/SceneKitTutorial
+
+## Viz Ideas
 
 visualization ideas that I think I'd like to try and enable with these experiments (maybe creating a basic gallery):
 
