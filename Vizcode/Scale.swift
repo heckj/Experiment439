@@ -18,7 +18,8 @@ import Foundation
 // https://www.hackingwithswift.com/articles/74/understanding-protocol-associated-types-and-their-constraints
 
 public protocol Scale {
-    associatedtype ComparableType: Comparable
+    associatedtype ComparableType: Comparable // input domain
+    associatedtype AnotherComparableType: Comparable // output range
 
     var isClamped: Bool { get }
 
@@ -26,11 +27,25 @@ public protocol Scale {
     var domain: ClosedRange<ComparableType> { get }
 
     // output values
-    var range: ClosedRange<ComparableType> { get }
+    var range: ClosedRange<AnotherComparableType> { get }
 
-    func scale(_ inputValue: ComparableType) -> ComparableType
-    func invert(_ outputValue: ComparableType) -> ComparableType
-    func ticks(count: Int) -> [ComparableType]
+    /// converts a value between the input "domain" and output "range"
+    ///
+    /// - Parameter inputValue: a value within the bounds of the ClosedRange for domain
+    /// - Returns: a value within the bounds of the ClosedRange for range, or NaN if it maps outside the bounds
+    func scale(_ inputValue: ComparableType) -> AnotherComparableType
+
+    /// converts back from the output "range" to a value within the input "domain". The inverse of scale()
+    ///
+    /// - Parameter outputValue: a value within the bounds of the ClosedRange for range
+    /// - Returns: a value within the bounds of the ClosedRange for domain, or NaN if it maps outside the bounds
+    func invert(_ outputValue: AnotherComparableType) -> ComparableType
+
+    /// returns an array of the locations within the ClosedRange of range to locate ticks for the scale
+    ///
+    /// - Parameter count: a number of ticks to display, defaulting to 10
+    /// - Returns: an Array of the values within the ClosedRange of range
+    func ticks(count: Int) -> [AnotherComparableType]
 }
 
 // NOTE(heckj): OTHER SCALES: make a PowScale (& maybe Sqrt, Log, Ln)
