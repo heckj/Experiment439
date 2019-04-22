@@ -10,6 +10,8 @@ import Foundation
 import SceneKit
 
 public protocol DataPointValueProvider {
+    // NOTE(heckj): these might make more sense as properties than functions...
+    
     // x, y, z location seems relevant
     func xValue(_ datapoint: Any) -> CGFloat
     func yValue(_ datapoint: Any) -> CGFloat
