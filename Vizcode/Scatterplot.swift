@@ -54,7 +54,7 @@ public class ScatterPlot: SCNNode {
     // zAxis (opt)
 
     // DataSpace
-    //  - dataSource
+    //  - dataSource[]
     // options for presenting data:
     // - start w/ collection, hand in a closure to return data values for specific axis
     //   - hand in 1, 2, or 3 values depending on the type of scattering you want
@@ -62,6 +62,8 @@ public class ScatterPlot: SCNNode {
     //     that data object
     // - format the data such that you can iterate through the data source methods to get the
     //   values you want.
+    // - when you add a DataSpace to a plot, you may also want to add it to the legend as well,
+    //   optionally including a representative SCNNode if you want to distinguish based on shape/material
 
     // IOSCharts has a concept of "datasets" - and a single chart can have multiple of them displayed
     // in a single view. That sort of matches (more closely anyway) this datasource concept - only there
