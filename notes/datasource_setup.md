@@ -206,4 +206,3 @@ Once this is running, you can open a browser to http://localhost:9090/
     open http://localhost:9090
 
 ![Prometheus Query Page screenshot](prometheus_query_page.png)
-
