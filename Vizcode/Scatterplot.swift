@@ -1,5 +1,5 @@
 //
-//  Scatterplot.swift
+//  ScatterPlot.swift
 //  Experiment439
 //
 //  Created by Joseph Heck on 4/21/19.
@@ -56,7 +56,8 @@ import SceneKit
  3) Add a datasource, along with a reference to at least one axis, to know how to plot it
    - I think we want to have a relation between axis and datasource (axis used to interp datasource data)
      but we probably want to allow all axis' to use a single data source
-   - the reverse - adding multiple datasources, using the same axis, should plot parallel (or overlaid?) views, and would be how you create the layered views kind of setup
+   - the reverse - adding multiple datasources, using the same axis, should plot parallel
+     (or overlaid?) views, and would be how you create the layered views kind of setup
    - which properties (or func's) of the Datasource protocol get used will depend on the plot I expect
 
  */

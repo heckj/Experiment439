@@ -63,6 +63,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A11CEAF226F6C4A00C5C47F /* notes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = notes; sourceTree = "<group>"; };
 		1A2B3CD5226A39350074A818 /* VizcodeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VizcodeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A2B3CD7226A39350074A818 /* InterpolateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterpolateTests.swift; sourceTree = "<group>"; };
 		1A2B3CD9226A39350074A818 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -154,6 +155,7 @@
 			children = (
 				1A5225AF22694B23003F4219 /* README.md */,
 				1A4B55B6226E5CFE0089FD82 /* LICENSE */,
+				1A11CEAF226F6C4A00C5C47F /* notes */,
 				1A2B3CD0226A38E40074A818 /* Vizcode */,
 				1A52259022694AB2003F4219 /* Experiment439 */,
 				1A5225A322694AB4003F4219 /* Experiment439Tests */,
