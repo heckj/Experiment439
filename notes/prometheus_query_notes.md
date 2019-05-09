@@ -28,7 +28,14 @@ shows the last 10 min of data for node_memory_MemAvailable_bytes aggregated to 1
 
     curl --data-urlencode "query=node_memory_MemAvailable_bytes[10m:1m]" http://127.0.0.1:9090/api/v1/query | jq
 
-the result type is “Matrix”, rather than a single value (Vector)
+the result type is “Matrix”, rather than a single value (vector - which matches an instant vector). 
+
+There 4 different result types from the Prometheus REST API <https://prometheus.io/docs/prometheus/latest/querying/api/#expression-query-result-formats>:
+
+- matrix (range vector)
+- vector (instant vector)
+- scalar (scalar instant)
+- string
 
 example output:
 
