@@ -14,7 +14,8 @@ class Box: SCNNode {
          height: CGFloat = 1.0,
          length: CGFloat = 1.0,
          chamferRadius: CGFloat = 0.1,
-         color: NSColor) {
+         color: NSColor)
+    {
         super.init()
 
         geometry = SCNBox(width: width, height: height, length: length, chamferRadius: chamferRadius)
