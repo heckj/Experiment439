@@ -1,4 +1,3 @@
-
 //
 //  ScatterPlot.swift
 //  Experiment439
